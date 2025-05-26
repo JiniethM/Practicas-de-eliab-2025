@@ -1,13 +1,36 @@
 .color-navbar {
     background-color: #0093E9 !important;
     background-image: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+    z-index: 1030; /* Asegura que el encabezado esté siempre encima */
   }
   
   .color-texto-marca {
     color: #1e3d87 !important;
   }
-
+  
   .margen-superior-main {
-    margin-top: 60px;
+    margin-top: 80px; /* Ajusta este valor según la altura del encabezado */
   }
   
+  .logo-titulo {
+    margin-right: auto; /* Mueve el logo y el título hacia atrás */
+  }
+  
+  .nav-link-hover {
+    transition: color 0.3s ease; /* Transición suave al cambiar el color */
+  }
+  
+  .nav-link-hover:hover {
+    color: #0056b3 !important; /* Cambia el color a azul al pasar el mouse */
+  }
+  
+  .navbar-buttons {
+    display: flex;
+    gap: 10px; /* Espaciado uniforme entre botones */
+    flex-wrap: wrap; /* Permite que los botones se acomoden en varias líneas si es necesario */
+  }
+  
+  .navbar-buttons .btn {
+    font-size: 0.9rem; /* Ajusta el tamaño del texto de los botones */
+    padding: 5px 10px; /* Ajusta el relleno interno de los botones */
+  }
