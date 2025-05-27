@@ -1,36 +1,77 @@
+/* Navbar color + gradiente */
 .color-navbar {
-    background-color: #0093E9 !important;
-    background-image: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
-    z-index: 1030; /* Asegura que el encabezado esté siempre encima */
+  background-color: #0093E9 !important;
+  background-image: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+  z-index: 1030;
+  padding: 0.5rem 1rem;
+}
+
+.shadow-navbar {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste para el contenido debajo del navbar */
+.margen-superior-main {
+  margin-top: 80px;
+}
+
+/* Logo + texto */
+.logo-titulo {
+  margin-right: auto;
+}
+
+.brand-text {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Nav links generales */
+.nav-link-style {
+  color: #fff !important;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+  padding: 0.4rem 0.7rem;
+}
+
+.nav-link-style:hover {
+  color: #0056b3 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Offcanvas menú */
+.offcanvas {
+  width: 240px !important;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #ddd;
+}
+
+.offcanvas-body .nav-link {
+  color: #333 !important;
+  margin: 0.2rem 0;
+}
+
+/* Media queries para responsive */
+@media (max-width: 600px) {
+  .brand-text {
+    font-size: 0.9rem;
   }
-  
-  .color-texto-marca {
-    color: #1e3d87 !important;
+  .logo-titulo img {
+    width: 26px;
+    height: 26px;
   }
-  
-  .margen-superior-main {
-    margin-top: 80px; /* Ajusta este valor según la altura del encabezado */
+  .nav-link-style {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    margin: 0 0.3rem;
   }
-  
-  .logo-titulo {
-    margin-right: auto; /* Mueve el logo y el título hacia atrás */
+}
+
+@media (min-width: 1200px) {
+  .nav-link-style {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
-  
-  .nav-link-hover {
-    transition: color 0.3s ease; /* Transición suave al cambiar el color */
-  }
-  
-  .nav-link-hover:hover {
-    color: #0056b3 !important; /* Cambia el color a azul al pasar el mouse */
-  }
-  
-  .navbar-buttons {
-    display: flex;
-    gap: 10px; /* Espaciado uniforme entre botones */
-    flex-wrap: wrap; /* Permite que los botones se acomoden en varias líneas si es necesario */
-  }
-  
-  .navbar-buttons .btn {
-    font-size: 0.9rem; /* Ajusta el tamaño del texto de los botones */
-    padding: 5px 10px; /* Ajusta el relleno interno de los botones */
-  }
+}

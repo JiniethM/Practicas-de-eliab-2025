@@ -71,15 +71,15 @@ const Encabezado = () => {
   };
 
   return (
-    <Navbar expand="sm" fixed="top" className="color-navbar">
-      <Container>
+    <Navbar expand="sm" fixed="top" className="color-navbar shadow-navbar">
+      <Container fluid>
         <Navbar.Brand
           onClick={() => handleNavigate("/inicio")}
-          className="text-white logo-titulo"
+          className="text-white logo-titulo d-flex align-items-center"
           style={{ cursor: "pointer" }}
         >
-          <img alt="" src={logo} width="30" height="30" className="d-inline-block align-top me-2" />
-          <strong>Suplidora de Belleza Jinieth</strong>
+          <img alt="" src={logo} width="30" height="30" className="me-2" />
+          <strong className="brand-text d-none d-sm-inline">Suplidora de Belleza Jinieth</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" onClick={handleToggle} />
         <Navbar.Offcanvas
@@ -88,49 +88,47 @@ const Encabezado = () => {
           placement="end"
           show={isCollapsed}
           onHide={() => setIsCollapsed(false)}
+          className="bg-light"
         >
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title
-              id="offcanvasNavbarLabel-expand-sm"
-              className={isCollapsed ? "color-texto-marca" : "text-white"}
-            >
+            <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
               Menú
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link onClick={() => handleNavigate("/inicio")} className="text-white mx-2 nav-link-hover">
+            <Nav className="flex-column flex-sm-row justify-content-end w-100">
+              <Nav.Link onClick={() => handleNavigate("/inicio")} className="nav-link-style">
                 Inicio
               </Nav.Link>
-              <Nav.Link onClick={() => handleNavigate("/categorias")} className="text-white mx-2 nav-link-hover">
+              <Nav.Link onClick={() => handleNavigate("/categorias")} className="nav-link-style">
                 Categorías
               </Nav.Link>
-              <Nav.Link onClick={() => handleNavigate("/productos")} className="text-white mx-2 nav-link-hover">
+              <Nav.Link onClick={() => handleNavigate("/productos")} className="nav-link-style">
                 Productos
               </Nav.Link>
-              <Nav.Link onClick={() => handleNavigate("/catalogo")} className="text-white mx-2 nav-link-hover">
+              <Nav.Link onClick={() => handleNavigate("/catalogo")} className="nav-link-style">
                 Catálogo
               </Nav.Link>
-              <Nav.Link onClick={() => handleNavigate("/libros")} className="text-white mx-2 nav-link-hover">
+              <Nav.Link onClick={() => handleNavigate("/libros")} className="nav-link-style">
                 Libros
               </Nav.Link>
-              <Nav.Link onClick={() => handleNavigate("/clima")} className="text-white mx-2 nav-link-hover">
+              <Nav.Link onClick={() => handleNavigate("/clima")} className="nav-link-style">
                 Clima
               </Nav.Link>
-              <Nav.Link onClick={() => handleNavigate("/estadisticas")} className="text-white mx-2 nav-link-hover">
+              <Nav.Link onClick={() => handleNavigate("/estadisticas")} className="nav-link-style">
                 Estadísticas
               </Nav.Link>
               {!esDispositivoIOS && mostrarBotonInstalacion && (
-                <Nav.Link onClick={instalacion} className="text-white mx-2 nav-link-hover">
-                  Instalar Suplidora de Belleza <i className="bi bi-download"></i>
+                <Nav.Link onClick={instalacion} className="nav-link-style">
+                  Instalar App <i className="bi bi-download"></i>
                 </Nav.Link>
               )}
               {isLoggedIn ? (
-                <Nav.Link onClick={handleLogout} className="text-white mx-2 nav-link-hover">
+                <Nav.Link onClick={handleLogout} className="nav-link-style">
                   Cerrar Sesión
                 </Nav.Link>
               ) : (
-                <Nav.Link onClick={() => handleNavigate("/")} className="text-white mx-2 nav-link-hover">
+                <Nav.Link onClick={() => handleNavigate("/")} className="nav-link-style">
                   Iniciar Sesión
                 </Nav.Link>
               )}
