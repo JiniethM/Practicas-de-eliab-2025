@@ -4,8 +4,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "/logojinieth1.png";
 import { useAuth } from "../database/authcontext";
+import { useTranslation } from "react-i18next";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "../App.css";
 
@@ -13,6 +15,7 @@ const Encabezado = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const { isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const [solicitudInstalacion, setSolicitudInstalacion] = useState(null);
   const [mostrarBotonInstalacion, setMostrarBotonInstalacion] = useState(false);
@@ -31,10 +34,7 @@ const Encabezado = () => {
     };
 
     window.addEventListener("beforeinstallprompt", manejarSolicitudInstalacion);
-
-    return () => {
-      window.removeEventListener("beforeinstallprompt", manejarSolicitudInstalacion);
-    };
+    return () => window.removeEventListener("beforeinstallprompt", manejarSolicitudInstalacion);
   }, []);
 
   const handleLogout = async () => {
@@ -50,10 +50,13 @@ const Encabezado = () => {
   };
 
   const handleToggle = () => setIsCollapsed(!isCollapsed);
-
   const handleNavigate = (path) => {
     navigate(path);
     setIsCollapsed(false);
+  };
+
+  const cambiarIdioma = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   const instalacion = async () => {
@@ -92,49 +95,54 @@ const Encabezado = () => {
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
-              Menú
+              {t("menu.menu")}
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="flex-column flex-sm-row justify-content-end w-100">
               <Nav.Link onClick={() => handleNavigate("/inicio")} className="nav-link-style">
-                Inicio
+                {t("menu.inicio")}
               </Nav.Link>
               <Nav.Link onClick={() => handleNavigate("/categorias")} className="nav-link-style">
-                Categorías
+                {t("menu.categorias")}
               </Nav.Link>
               <Nav.Link onClick={() => handleNavigate("/productos")} className="nav-link-style">
-                Productos
+                {t("menu.productos")}
               </Nav.Link>
               <Nav.Link onClick={() => handleNavigate("/catalogo")} className="nav-link-style">
-                Catálogo
+                {t("menu.catalogo")}
               </Nav.Link>
               <Nav.Link onClick={() => handleNavigate("/libros")} className="nav-link-style">
-                Libros
+                {t("menu.libros")}
               </Nav.Link>
               <Nav.Link onClick={() => handleNavigate("/clima")} className="nav-link-style">
-                Clima
+                {t("menu.clima")}
               </Nav.Link>
               <Nav.Link onClick={() => handleNavigate("/estadisticas")} className="nav-link-style">
-                Estadísticas
+                {t("menu.estadisticas")}
               </Nav.Link>
               <Nav.Link onClick={() => handleNavigate("/empleados")} className="nav-link-style">
-                Empleados
+                {t("menu.empleados")}
               </Nav.Link>
               {!esDispositivoIOS && mostrarBotonInstalacion && (
                 <Nav.Link onClick={instalacion} className="nav-link-style">
-                  Instalar App <i className="bi bi-download"></i>
+                  {t("menu.instalar")} <i className="bi bi-download"></i>
                 </Nav.Link>
               )}
               {isLoggedIn ? (
                 <Nav.Link onClick={handleLogout} className="nav-link-style">
-                  Cerrar Sesión
+                  {t("menu.cerrarSesion")}
                 </Nav.Link>
               ) : (
                 <Nav.Link onClick={() => handleNavigate("/")} className="nav-link-style">
-                  Iniciar Sesión
+                  {t("menu.iniciarSesion")}
                 </Nav.Link>
               )}
+
+              <NavDropdown title="🌐" id="basic-nav-dropdown">
+                <NavDropdown.Item onClick={() => cambiarIdioma("es")}>Español</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => cambiarIdioma("en")}>English</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
