@@ -1,13 +1,16 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 const TablaClima = ({ datosPorHora }) => {
+  const { t } = useTranslation();
+
   return (
     <Table striped bordered hover responsive>
       <thead>
         <tr>
-          <th>Hora</th>
-          <th>Temperatura (°C)</th>
+          <th>{t("clima.tabla.hora")}</th>
+          <th>{t("clima.tabla.temperatura")}</th>
         </tr>
       </thead>
       <tbody>

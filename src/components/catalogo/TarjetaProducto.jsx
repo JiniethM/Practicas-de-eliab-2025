@@ -1,7 +1,10 @@
 import { Zoom } from "react-awesome-reveal";
 import { Card, Col, Button } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 const TarjetaProducto = ({ producto, onEdit }) => {
+  const { t } = useTranslation();
+
   return (
     <Col lg={3} md={4} sm={12} className="mb-4">
       <Zoom triggerOnce>
@@ -12,12 +15,12 @@ const TarjetaProducto = ({ producto, onEdit }) => {
           <Card.Body>
             <Card.Title>{producto.nombre}</Card.Title>
             <Card.Text>
-              Precio: C${producto.precio} <br />
-              Categoría: {producto.categoria}
+              {t("productos.precio")}: C${producto.precio} <br />
+              {t("productos.categoria")}: {producto.categoria}
             </Card.Text>
 
             <Button variant="warning" onClick={() => onEdit(producto)}>
-              Editar
+              {t("productos.editar")}
             </Button>
           </Card.Body>
         </Card>
