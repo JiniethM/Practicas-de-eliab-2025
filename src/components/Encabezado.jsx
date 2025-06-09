@@ -118,6 +118,9 @@ const Encabezado = () => {
               <Nav.Link onClick={() => handleNavigate("/estadisticas")} className="nav-link-style">
                 Estadísticas
               </Nav.Link>
+              <Nav.Link onClick={() => handleNavigate("/empleados")} className="nav-link-style">
+                Empleados
+              </Nav.Link>
               {!esDispositivoIOS && mostrarBotonInstalacion && (
                 <Nav.Link onClick={instalacion} className="nav-link-style">
                   Instalar App <i className="bi bi-download"></i>
