@@ -11,6 +11,7 @@ import Catalogo from "./views/Catalogo";
 import Libros from "./views/Libros";
 import Clima from "./views/Clima";
 import Estadisticas from "./views/Estadisticas";
+import Empleados from "./views/Empleados";
 
 
 import './App.css'
@@ -30,6 +31,7 @@ function App() {
               <Route path="/libros" element={<ProtectedRoute element={<Libros />} />}/>
               <Route path="/clima" element={<ProtectedRoute element={<Clima />} />}/>
               <Route path="/estadisticas" element={<ProtectedRoute element={<Estadisticas />} />}/>
+              <Route path="/empleados" element={<ProtectedRoute element={<Empleados />} />}/>
             </Routes>
           </main>
       </Router>
