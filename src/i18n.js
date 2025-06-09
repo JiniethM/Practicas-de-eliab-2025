@@ -18,6 +18,48 @@ const resources = {
         cerrarSesion: "Cerrar Sesión",
         iniciarSesion: "Iniciar Sesión",
         menu: "Menú"
+      },
+      productos: {
+        precio: "Precio",
+        categoria: "Categoría",
+        editar: "Editar"
+      },
+      categorias: {
+        modal: {
+          titulo: "Agregar Categoría",
+          nombreLabel: "Nombre",
+          nombrePlaceholder: "Ingresa el nombre",
+          descripcionLabel: "Descripción",
+          descripcionPlaceholder: "Ingresa la descripción",
+          cancelar: "Cancelar",
+          guardar: "Guardar"
+        }
+      },
+      clima: {
+        titulo: "Seleccionar Ubicación",
+        automatica: "Ubicación Automática",
+        manual: "Ubicación Manual",
+        latitud: "Latitud",
+        longitud: "Longitud",
+        placeholderLatitud: "Ej. 12.10629",
+        placeholderLongitud: "Ej. -85.36452",
+        botonCargar: "Cargar",
+        tabla: {
+          hora: "Hora",
+          temperatura: "Temperatura (°C)"
+        }
+      },
+      libros: {
+        modal: {
+          titulo: "Agregar Libro",
+          nombre: "Nombre",
+          autor: "Autor",
+          genero: "Género",
+          placeholderGenero: "Ej: Ficción, No Ficción, Fantasía",
+          pdf: "Documento PDF",
+          cancelar: "Cancelar",
+          guardar: "Guardar"
+        }
       }
     }
   },
@@ -36,6 +78,48 @@ const resources = {
         cerrarSesion: "Log Out",
         iniciarSesion: "Log In",
         menu: "Menu"
+      },
+      productos: {
+        precio: "Price",
+        categoria: "Category",
+        editar: "Edit"
+      },
+      categorias: {
+        modal: {
+          titulo: "Add Category",
+          nombreLabel: "Name",
+          nombrePlaceholder: "Enter the name",
+          descripcionLabel: "Description",
+          descripcionPlaceholder: "Enter the description",
+          cancelar: "Cancel",
+          guardar: "Save"
+        }
+      },
+      clima: {
+        titulo: "Select Location",
+        automatica: "Automatic Location",
+        manual: "Manual Location",
+        latitud: "Latitude",
+        longitud: "Longitude",
+        placeholderLatitud: "e.g. 12.10629",
+        placeholderLongitud: "e.g. -85.36452",
+        botonCargar: "Load",
+        tabla: {
+          hora: "Hour",
+          temperatura: "Temperature (°C)"
+        }
+      },
+      libros: {
+        modal: {
+          titulo: "Add Book",
+          nombre: "Name",
+          autor: "Author",
+          genero: "Genre",
+          placeholderGenero: "e.g. Fiction, Non-fiction, Fantasy",
+          pdf: "PDF Document",
+          cancelar: "Cancel",
+          guardar: "Save"
+        }
       }
     }
   }
