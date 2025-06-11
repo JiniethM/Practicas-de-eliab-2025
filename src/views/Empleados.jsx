@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Container, Button, Col, Row } from "react-bootstrap";
 import { db } from "../database/firebaseconfig";
 import { collection, addDoc, onSnapshot } from "firebase/firestore";
+
 import ModalRegistroEmpleado from "../components/empleados/ModalRegistroEmpleado";
 import TablaEmpleados from "../components/empleados/TablaEmpleados";
-
+import CuadroBusquedas from "../components/busquedas/CuadroBusquedas";
 
 const Empleados = () => {
   const [empleados, setEmpleados] = useState([]);
