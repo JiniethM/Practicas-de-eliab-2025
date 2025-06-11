@@ -23,18 +23,25 @@ const TablaEmpleados = ({
           </tr>
         </thead>
         <tbody>
-          {empleados.map((empleado) => (
-            <tr key={empleado.id}>
-              <td>{empleado.nombre}</td>
-              <td>{empleado.apellido}</td>
-              <td>{empleado.correo}</td>
-              <td>{empleado.telefono}</td>
-              <td>{empleado.cedula}</td>
-              <td>{empleado.fechaNacimiento}</td>
+          {empleados.length > 0 ? (
+            empleados.map((empleado) => (
+              <tr key={empleado.id}>
+                <td>{empleado.nombre}</td>
+                <td>{empleado.apellido}</td>
+                <td>{empleado.correo}</td>
+                <td>{empleado.telefono}</td>
+                <td>{empleado.cedula}</td>
+                <td>{empleado.fechaNacimiento}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="6" className="text-center">No hay empleados registrados</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </Table>
+      
       <Paginacion
         itemsPerPage={itemsPerPage}
         totalItems={totalItems}
